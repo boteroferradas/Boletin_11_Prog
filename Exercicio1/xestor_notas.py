@@ -15,6 +15,7 @@ class Xestor_Notas:
     def buscar_clave(self, palabra):
         with open(self.__ruta, 'r') as notas:
             lineas = notas.readlines()
+            print(lineas)
             for linea in lineas:
                 if palabra in linea:
                     print(linea)
@@ -25,4 +26,4 @@ if __name__ == "__main__":
     xestor = Xestor_Notas('notas.txt')
     # xestor.engadir_nota('Lore ipsum')
     # xestor.leer_notas()
-    xestor.buscar_clave('Tercera')
+    xestor.buscar_clave('Linea')
