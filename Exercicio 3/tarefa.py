@@ -1,27 +1,25 @@
-from datetime import datetime
-
-
 class Tarefa:
-    def __init__(self, inicio: datetime, duracion: int, nome_tf: str, descricion: str, estado: str):
-        self._inicio = inicio
+    def __init__(self, data, hora, duracion, nome, descricion, estado):
+        self._data = data
+        self._hora = hora
         self._duracion = duracion
-        self._nome_tf = nome_tf
+        self._nome = nome
         self._descricion = descricion
         self._estado = estado
 
     @property
-    def estado(self):
-        return self._estado
-    @estado.setter
-    def estado(self, estado):
-        self._estado = estado
+    def data(self):
+        return self._data
+    @data.setter
+    def data(self, data):
+        self._data = data
 
     @property
-    def inicio(self):
-        return self._inicio
-    @inicio.setter
-    def inicio(self, inicio):
-        self._inicio = inicio
+    def hora(self):
+        return self._hora
+    @hora.setter
+    def hora(self, hora):
+        self._hora = hora
 
     @property
     def duracion(self):
@@ -31,11 +29,11 @@ class Tarefa:
         self._duracion = duracion
 
     @property
-    def nome_tf(self):
-        return self._nome_tf
-    @nome_tf.setter
-    def nome_tf(self, nome_tf):
-        self._nome_tf = nome_tf
+    def nome(self):
+        return self._nome
+    @nome.setter
+    def nome(self, nome):
+        self._nome = nome
 
     @property
     def descricion(self):
@@ -44,6 +42,9 @@ class Tarefa:
     def descricion(self, descricion):
         self._descricion = descricion
 
-    def __str__(self):
-        fecha_str = self._inicio.strftime("%d/%m/%Y %H:%M")
-        return f"[{self._estado}] {self._nome_tf} - Inicia: {fecha_str} ({self._duracion} min)"
+    @property
+    def estado(self):
+        return self._estado
+    @estado.setter
+    def estado(self, estado):
+        self._estado = estado
